@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<!-- <html lang="en"> -->
+<html ng-app="mwl.calendar.docs">
 <head>
 
     <meta charset="utf-8">
@@ -385,6 +385,7 @@
 
                     <!-- Content Row -->
                     <!-- <div class="row"> -->
+                    <!-- 달력 생산일정 확인 -->
                         <div ng-controller="KitchenSinkCtrl as vm">
                             <h2 class="text-center">{{ vm.calendarTitle }}</h2>
                           
@@ -399,7 +400,7 @@
                                     date="vm.viewDate"
                                     decrement="vm.calendarView"
                                     ng-click="vm.cellIsOpen = false">
-                                    Previous
+                                    전월
                                   </button>
                                   <button
                                     class="btn btn-default"
@@ -407,7 +408,7 @@
                                     date="vm.viewDate"
                                     set-to-today
                                     ng-click="vm.cellIsOpen = false">
-                                    Today
+                                    금월
                                   </button>
                                   <button
                                     class="btn btn-primary"
@@ -415,7 +416,7 @@
                                     date="vm.viewDate"
                                     increment="vm.calendarView"
                                     ng-click="vm.cellIsOpen = false">
-                                    Next
+                                    차월
                                   </button>
                                 </div>
                               </div>
@@ -424,10 +425,10 @@
                           
                               <div class="col-md-6 text-center">
                                 <div class="btn-group">
-                                  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'year'" ng-click="vm.cellIsOpen = false">Year</label>
-                                  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'month'" ng-click="vm.cellIsOpen = false">Month</label>
-                                  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'week'" ng-click="vm.cellIsOpen = false">Week</label>
-                                  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'day'" ng-click="vm.cellIsOpen = false">Day</label>
+                                  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'year'" ng-click="vm.cellIsOpen = false">년</label>
+                                  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'month'" ng-click="vm.cellIsOpen = false">월</label>
+                                  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'week'" ng-click="vm.cellIsOpen = false">주</label>
+                                  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'day'" ng-click="vm.cellIsOpen = false">일</label>
                                 </div>
                               </div>
                           
@@ -453,8 +454,10 @@
                           
                             <br><br><br>
                           
+
+                            <!-- 생산공정 일정 표시 -->
                             <h3 id="event-editor">
-                              Edit events
+                              일정 추가
                               <button
                                 class="btn btn-primary pull-right"
                                 ng-click="vm.addEvent()">
@@ -467,11 +470,11 @@
                           
                               <thead>
                                 <tr>
-                                  <th>Title</th>
-                                  <th>Primary color</th>
-                                  <th>Secondary color</th>
-                                  <th>Starts at</th>
-                                  <th>Ends at</th>
+                                  <th>제목</th>
+                                  <th>생산1</th>
+                                  <th>생산2</th>
+                                  <th>시작일</th>
+                                  <th>종료일</th>
                                   <th>Remove</th>
                                 </tr>
                               </thead>
