@@ -1,6 +1,20 @@
+<?php
+	$db_id='w1004mesmg';
+	$db_pw='sunmoons1s2s3!';
+	$db_name='w1004mesmg';
+	$db_domain='localhost';
+	$db=mysqli_connect($db_domain,$db_id,$db_pw,$db_name);
+
+    if($db) {
+        echo"db연결 성공";
+    }else
+    echo "db연결 실패"; 
+?>
+
+
 <!DOCTYPE html>
-<!-- <html lang="en"> -->
-<html ng-app="mwl.calendar.docs">
+<html lang="en">
+
 <head>
 
     <meta charset="utf-8">
@@ -9,7 +23,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>SB Admin 2 - Buttons</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,21 +33,6 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!-- 달력 -->
-    <script src="https://unpkg.com/moment@2.17.1"></script>
-    <script src="https://unpkg.com/interactjs@1"></script>
-    <script src="https://unpkg.com/angular@1.6.6/angular.js"></script>
-    <script src="https://unpkg.com/angular-animate@1.6.6/angular-animate.js"></script>
-    <script src="https://unpkg.com/angular-ui-bootstrap@2/dist/ui-bootstrap-tpls.js"></script>
-    <script src="https://unpkg.com/rrule@2"></script>
-    <script src="https://unpkg.com/angular-bootstrap-colorpicker@3"></script>
-    <script src="https://unpkg.com/angular-bootstrap-calendar"></script>
-    <link href="https://unpkg.com/bootstrap@3/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="https://unpkg.com/angular-bootstrap-colorpicker@3/css/colorpicker.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
-    <script src="example.js"></script>
-    <script src="helpers.js"></script>
 
 </head>
 
@@ -45,8 +44,8 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+             <!-- Sidebar - Brand -->
+             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -74,7 +73,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- <h6 class="collapse-header">Custom Components:</h6> -->
-                        <a class="collapse-item" href="business1.php">생산품 수주 관리</a>
+                        <a class="collapse-item" href="business1.html">생산품 수주 관리</a>
                         <a class="collapse-item" href="business2.html">발주현황</a>
                     </div>
                 </div>
@@ -167,13 +166,6 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
-
         </ul>
         <!-- End of Sidebar -->
 
@@ -190,6 +182,20 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
+
+                    <!-- Topbar Search -->
+                    <!-- <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form> -->
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -218,14 +224,13 @@
                             </div>
                         </li>
 
-              
-                     
+
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">ERP 관리자</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -260,194 +265,36 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading 다운로드-->
-                    <!-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div> -->
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">영업관리 - 생산품 수주관리</h1>
+                    <?php
+                        $jb_sql = "SELECT * FROM sales;";
+                        $jb_result = mysqli_query( $db, $jb_sql );
+                        while( $jb_row = mysqli_fetch_array( $jb_result ) ) {
+                            echo '<p>' . $jb_row[ 'no' ] . $jb_row[ 'sphere' ] . $jb_row[ 'type' ] . $jb_row[ 'product1' ] . $jb_row[ 'company' ]. $jb_row[ 'day' ].   '</p>';
+                          }
 
-                    <!-- Content Row -->
-                    <!-- <div class="row"> -->
-                    <!-- 달력 생산일정 확인 -->
-                        <div ng-controller="KitchenSinkCtrl as vm">
-                            <h2 class="text-center">{{ vm.calendarTitle }}</h2>
-                          
-                            <div class="row">
-                          
-                              <div class="col-md-6 text-center">
-                                <div class="btn-group">
-                          
-                                  <button
-                                    class="btn btn-primary"
-                                    mwl-date-modifier
-                                    date="vm.viewDate"
-                                    decrement="vm.calendarView"
-                                    ng-click="vm.cellIsOpen = false">
-                                    전월
-                                  </button>
-                                  <button
-                                    class="btn btn-default"
-                                    mwl-date-modifier
-                                    date="vm.viewDate"
-                                    set-to-today
-                                    ng-click="vm.cellIsOpen = false">
-                                    금월
-                                  </button>
-                                  <button
-                                    class="btn btn-primary"
-                                    mwl-date-modifier
-                                    date="vm.viewDate"
-                                    increment="vm.calendarView"
-                                    ng-click="vm.cellIsOpen = false">
-                                    차월
-                                  </button>
-                                </div>
-                              </div>
-                          
-                              <br class="visible-xs visible-sm">
-                          
-                              <div class="col-md-6 text-center">
-                                <div class="btn-group">
-                                  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'year'" ng-click="vm.cellIsOpen = false">년</label>
-                                  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'month'" ng-click="vm.cellIsOpen = false">월</label>
-                                  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'week'" ng-click="vm.cellIsOpen = false">주</label>
-                                  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'day'" ng-click="vm.cellIsOpen = false">일</label>
-                                </div>
-                              </div>
-                          
-                            </div>
-                          
-                            <br>
-                          
-                            <mwl-calendar
-                              events="vm.events"
-                              view="vm.calendarView"
-                              view-title="vm.calendarTitle"
-                              view-date="vm.viewDate"
-                              on-event-click="vm.eventClicked(calendarEvent)"
-                              on-event-times-changed="vm.eventTimesChanged(calendarEvent); calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
-                              cell-is-open="vm.cellIsOpen"
-                              day-view-start="06:00"
-                              day-view-end="22:59"
-                              day-view-split="30"
-                              cell-modifier="vm.modifyCell(calendarCell)"
-                              cell-auto-open-disabled="true"
-                              on-timespan-click="vm.timespanClicked(calendarDate, calendarCell)">
-                            </mwl-calendar>
-                          
-                            <br><br><br>
-                          
+                    ?>
 
-                            <!-- 생산공정 일정 표시 -->
-                            <h3 id="event-editor">
-                              일정 추가
-                              <button
-                                class="btn btn-primary pull-right"
-                                ng-click="vm.addEvent()">
-                                Add new
-                              </button>
-                              <div class="clearfix"></div>
-                            </h3>
-                          
-                            <table class="table table-bordered">
-                          
-                              <thead>
-                                <tr>
-                                  <th>제목</th>
-                                  <th>생산1</th>
-                                  <th>생산2</th>
-                                  <th>시작일</th>
-                                  <th>종료일</th>
-                                  <th>Remove</th>
-                                </tr>
-                              </thead>
-                          
-                              <tbody>
-                                <tr ng-repeat="event in vm.events track by $index">
-                                  <td>
-                                    <input
-                                      type="text"
-                                      class="form-control"
-                                      ng-model="event.title">
-                                  </td>
-                                  <td>
-                                    <input class="form-control" colorpicker type="text" ng-model="event.color.primary">
-                                  </td>
-                                  <td>
-                                    <input class="form-control" colorpicker type="text" ng-model="event.color.secondary">
-                                  </td>
-                                  <td>
-                                    <p class="input-group" style="max-width: 250px">
-                                      <input
-                                        type="text"
-                                        class="form-control"
-                                        readonly
-                                        uib-datepicker-popup="dd MMMM yyyy"
-                                        ng-model="event.startsAt"
-                                        is-open="event.startOpen"
-                                        close-text="Close" >
-                                      <span class="input-group-btn">
-                                        <button
-                                          type="button"
-                                          class="btn btn-default"
-                                          ng-click="vm.toggle($event, 'startOpen', event)">
-                                          <i class="glyphicon glyphicon-calendar"></i>
-                                        </button>
-                                      </span>
-                                    </p>
-                                    <div
-                                      uib-timepicker
-                                      ng-model="event.startsAt"
-                                      hour-step="1"
-                                      minute-step="15"
-                                      show-meridian="true">
-                                    </div>
-                                  </td>
-                                  <td>
-                                    <p class="input-group" style="max-width: 250px">
-                                      <input
-                                        type="text"
-                                        class="form-control"
-                                        readonly
-                                        uib-datepicker-popup="dd MMMM yyyy"
-                                        ng-model="event.endsAt"
-                                        is-open="event.endOpen"
-                                        close-text="Close">
-                                      <span class="input-group-btn">
-                                        <button
-                                          type="button"
-                                          class="btn btn-default"
-                                          ng-click="vm.toggle($event, 'endOpen', event)">
-                                          <i class="glyphicon glyphicon-calendar"></i>
-                                        </button>
-                                      </span>
-                                    </p>
-                                    <div
-                                      uib-timepicker
-                                      ng-model="event.endsAt"
-                                      hour-step="1"
-                                      minute-step="15"
-                                      show-meridian="true">
-                                    </div>
-                                  </td>
-                                  <td>
-                                    <button
-                                      class="btn btn-danger"
-                                      ng-click="vm.events.splice($index, 1)">
-                                      Delete
-                                    </button>
-                                  </td>
-                                </tr>
-                              </tbody>
-                          
-                            </table>
-                          </div>
+
+
+
+            
+
+                       
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
             </footer>
@@ -493,13 +340,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 
