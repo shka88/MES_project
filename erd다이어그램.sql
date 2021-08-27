@@ -1,4 +1,4 @@
-﻿CREATE TABLE `관리` (
+CREATE TABLE `관리` (
 	`권한정보`	varchar(30)	NULL,
 	`사원번호`	varchar(12)	NOT NULL,
 	`부서명`	enum('영업팀', '공정1팀', '공정2팀', '자재1팀', '자재2팀')	NOT NULL,
@@ -113,6 +113,26 @@ CREATE TABLE `공정 필요 자재` (
 	`자재수량`	int	NULL
 );
 
+
+ALTER TABLE `공정 필요 자재` ADD PRIMARY KEY(`공정명`);
+
+ALTER TABLE `관리` ADD PRIMARY KEY(`권한정보`);
+
+ALTER TABLE `발주처` ADD PRIMARY KEY(`발주업체명`);
+
+ALTER TABLE `부서정보` ADD PRIMARY KEY(`부서명`);
+
+ALTER TABLE `사원정보` ADD PRIMARY KEY(`사원번호`);
+
+ALTER TABLE `생산 공정 정보` ADD PRIMARY KEY(`공정명`);
+
+ALTER TABLE `수주처` ADD PRIMARY KEY(`수주업체명`);
+
+ALTER TABLE `자재정보` ADD PRIMARY KEY(`자재이름`);
+
+ALTER TABLE `품목정보` ADD PRIMARY KEY(`품목명`);
+
+
 ALTER TABLE `생산 공정 정보` ADD CONSTRAINT `FK_관리_TO_생산 공정 정보_1` FOREIGN KEY (
 	`부서명`
 )
@@ -175,4 +195,3 @@ ALTER TABLE `자재 출고 내역` ADD CONSTRAINT `FK_보유자재 현황_TO_자
 REFERENCES `보유자재 현황` (
 	`자재이름`
 );
-
