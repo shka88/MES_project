@@ -133,6 +133,8 @@ ALTER TABLE `자재정보` ADD PRIMARY KEY(`자재이름`);
 ALTER TABLE `품목정보` ADD PRIMARY KEY(`품목명`);
 
 
+
+//이 아래부터 사용이 안됨 
 ALTER TABLE `생산 공정 정보` ADD CONSTRAINT `FK_관리_TO_생산 공정 정보_1` FOREIGN KEY (
 	`부서명`
 )
