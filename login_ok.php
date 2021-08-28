@@ -23,7 +23,7 @@
             session_start();     
             echo("
                <script>
-                 location.href = 'main.php';
+                 location.href = './SmartFactory/index.html';
                </script>
             ");
         }

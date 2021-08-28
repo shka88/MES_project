@@ -1,4 +1,17 @@
-<php?
+<?php
+	$db_id='w1004mesmg';
+	$db_pw='sunmoons1s2s3!';
+	$db_name='w1004mesmg';
+	$db_domain='localhost';
+	$db=mysqli_connect($db_domain,$db_id,$db_pw,$db_name);
+
+    if($db) {
+        echo"db연결 성공";
+    }else
+    echo "db연결 실패"; 
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +23,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Charts</title>
+    <title>SB Admin 2 - Buttons</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -31,115 +44,108 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-           <!-- Sidebar - Brand -->
-           <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
-            </div>
-            <div class="sidebar-brand-text mx-3">MES</div>
-        </a>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
-        <!-- Nav Item - Dashboard -->
-        <!-- <li class="nav-item active">
-            <a class="nav-link" href="index.html">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>일정관리</span></a>
-        </li> -->
-
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <!-- <div class="sidebar-heading">
-            Interface
-        </div> -->
-
-        <!-- Nav Item - 영업메뉴 -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>영업관리</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Components:</h6>
-                    <a class="collapse-item" href="business1.php">생산품 수주 관리</a>
-                    <a class="collapse-item" href="business2.html">발주현황</a>
+             <!-- Sidebar - Brand -->
+             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
                 </div>
-            </div>
-        </li>
-
-        <!-- Nav Item - 자재관리 메뉴 -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>자재관리</span>
+                <div class="sidebar-brand-text mx-3">MES</div>
             </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Utilities:</h6>
-                    <a class="collapse-item" href="materials1.html">생산계획</a>
-                    <a class="collapse-item" href="materials2.html">자재 입고 이력</a>
-                    <a class="collapse-item" href="materials3.html">자재 출고 이력</a>
-                    <a class="collapse-item" href="materials4.html">보유 자재</a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <!-- <div class="sidebar-heading">
+                Interface
+            </div> -->
+
+            <!-- Nav Item - 영업메뉴 -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>영업관리</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <!-- <h6 class="collapse-header">Custom Components:</h6> -->
+                        <a class="collapse-item" href="business1.php">생산품 수주 관리</a>
+                        <a class="collapse-item" href="business2.html">발주현황</a>
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
-
-        <!-- Nav Item - 생산관리 메뉴 -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePro"
-                aria-expanded="true" aria-controls="collapsePro">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>생산관리</span>
-            </a>
-            <div id="collapsePro" class="collapse" aria-labelledby="headingPro"
-                data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Utilities:</h6>
-                    <a class="collapse-item" href="production1.html">생산현황일지</a>
-                    <a class="collapse-item" href="production2.html">전체 품목 관리</a>
-
+            <!-- Nav Item - 자재관리 메뉴 -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>자재관리</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <!-- <h6 class="collapse-header">Custom Utilities:</h6> -->
+                        <a class="collapse-item" href="materials1.html">생산계획</a>
+                        <a class="collapse-item" href="materials2.html">자재 입고 이력</a>
+                        <a class="collapse-item" href="materials3.html">자재 출고 이력</a>
+                        <a class="collapse-item" href="materials4.html">보유 자재</a>
+                    </div>
                 </div>
-            </div>
-        </li>
-       
+            </li>
 
-        <!-- Divider -->
-        <hr class="sidebar-divider">
 
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            설정
-        </div>
+            <!-- Nav Item - 생산관리 메뉴 -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePro"
+                    aria-expanded="true" aria-controls="collapsePro">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>생산관리</span>
+                </a>
+                <div id="collapsePro" class="collapse" aria-labelledby="headingPro"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <!-- <h6 class="collapse-header">Custom Utilities:</h6> -->
+                        <a class="collapse-item" href="production1.html">생산현황일지</a>
+                        <a class="collapse-item" href="production2.html">전체 품목 관리</a>
 
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                aria-expanded="true" aria-controls="collapsePages">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>관리자 시스템</span>
-            </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="person1.html">사원등록</a>
-                    <a class="collapse-item" href="person2.html">부서관리</a>
-                    <a class="collapse-item" href="person3.html">사용자 등록</a>
-                    <a class="collapse-item" href="customer.html">거래처 조회</a>
+                    </div>
                 </div>
+            </li>
+           
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                설정
             </div>
-        </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>관리자 시스템</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <!-- <h6 class="collapse-header">Login Screens:</h6> -->
+                        <a class="collapse-item" href="person1.html">사원등록</a>
+                        <a class="collapse-item" href="person2.html">부서관리</a>
+                        <a class="collapse-item" href="person3.html">사용자 등록</a>
+                        <a class="collapse-item" href="customer.html">거래처 조회</a>
+                    </div>
+                </div>
+            </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Charts</span></a>
@@ -218,7 +224,7 @@
                             </div>
                         </li>
 
-                 
+
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
@@ -260,68 +266,23 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Charts</h1>
-                    <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme.
-                        The charts below have been customized - for further customization options, please visit the <a
-                            target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js
-                            documentation</a>.</p>
+                    <h1 class="h3 mb-4 text-gray-800">영업관리 - 생산품 수주관리</h1>
+                    <?php
+                        $jb_sql = "SELECT * FROM sales;";
+                        $jb_result = mysqli_query( $db, $jb_sql );
+                        while( $jb_row = mysqli_fetch_array( $jb_result ) ) {
+                            echo '<p>' . $jb_row[ 'no' ] . $jb_row[ 'sphere' ] . $jb_row[ 'type' ] . $jb_row[ 'product1' ] . $jb_row[ 'company' ]. $jb_row[ 'day' ].   '</p>';
+                          }
 
-                    <!-- Content Row -->
-                    <div class="row">
+                    ?>
 
-                        <div class="col-xl-8 col-lg-7">
 
-                            <!-- Area Chart -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                    <hr>
-                                    Styling for the area chart can be found in the
-                                    <code>/js/demo/chart-area-demo.js</code> file.
-                                </div>
-                            </div>
 
-                            <!-- Bar Chart -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-bar">
-                                        <canvas id="myBarChart"></canvas>
-                                    </div>
-                                    <hr>
-                                    Styling for the bar chart can be found in the
-                                    <code>/js/demo/chart-bar-demo.js</code> file.
-                                </div>
-                            </div>
 
-                        </div>
+            
 
-                        <!-- Donut Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                    <hr>
-                                    Styling for the donut chart can be found in the
-                                    <code>/js/demo/chart-pie-demo.js</code> file.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                       
+
 
                 </div>
                 <!-- /.container-fluid -->
@@ -379,14 +340,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-    <script src="js/demo/chart-bar-demo.js"></script>
 
 </body>
 
