@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Buttons</title>
+    <title>SB Admin 2 - Cards</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -31,8 +30,8 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-             <!-- Sidebar - Brand -->
-             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -130,7 +129,6 @@
                     </div>
                 </div>
             </li>
-
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="charts.html">
@@ -211,7 +209,7 @@
                             </div>
                         </li>
 
-
+                        
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
@@ -253,27 +251,30 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">영업관리 - 생산품 수주관리</h1>
-                                        <!-- DataTales Example -->
-                                        <div class="card shadow mb-4">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">영업관리 - 발주현황 </h1>
+                    </div>
+
+                   <!-- DataTales Example -->
+                   <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <!-- <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6> -->
                             <form class="form-inline">
                                 <div class="form-group">
-                                    <label for="inputPassword6">수주번호: </label>
+                                    <label for="inputPassword6">의뢰코드: </label>
                                     <input type="text" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">
     
-                                    <label for="inputPassword6">공급사: </label>
+                                    <label for="inputPassword6">발주업체명: </label>
                                     <input type="text" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">
     
-                                    <label for="inputPassword6">품목: </label>
+                                    <label for="inputPassword6">자재이름: </label>
                                     <input type="text" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">
                                 </div>
                             </form>
                         <br>
                             <form class="form-inline">
                                 <div class="form-group">
-                                    <label for="inputPassword6">수주일자: </label>
+                                    <label for="inputPassword6">발주일자: </label>
                                     <input type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">~
                                     <input type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">
                                 
@@ -302,30 +303,6 @@
                         </div>
                         <div class="card-body">
                         <div class="table-responsive">
-                            
-                        <?php
-                    	$db_id='w1004mesmg';
-                        $db_pw='sunmoons1s2s3!';
-                        $db_name='w1004mesmg';
-                        $db_domain='localhost';
-                        $db=mysqli_connect($db_domain,$db_id,$db_pw,$db_name);
-                    
-                        if($db) {
-                            echo"db연결 성공";
-                        }else
-                        echo "db연결 실패"; 
-
-
-
-
-                        
-                        $jb_sql = "SELECT * FROM sales;";
-                        $jb_result = mysqli_query( $db, $jb_sql );
-                        while( $jb_row = mysqli_fetch_array( $jb_result ) ) {
-                            echo '<p>' . $jb_row[ 'no' ] . $jb_row[ 'sphere' ] . $jb_row[ 'type' ] . $jb_row[ 'product1' ] . $jb_row[ 'company' ]. $jb_row[ 'day' ].   '</p>';
-                          }
-
-                    ?>
                         <table class="table table-borderedr" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr class = "alert alert-primary">
@@ -379,21 +356,32 @@
                         </div>
                     </div>
 
+                     <?php
 
+                        $db_id='w1004mesmg';
+                        $db_pw='sunmoons1s2s3!';
+                        $db_name='w1004mesmg';
+                        $db_domain='localhost';
+                        $db=mysqli_connect($db_domain,$db_id,$db_pw,$db_name);
+
+                        if($db) {
+                            echo"db연결 성공";
+                        }else
+                        echo "db연결 실패"; 
+                        
+                        $jb_sql = "SELECT * FROM sales;";
+                        $jb_result = mysqli_query( $db, $jb_sql );
+                        while( $jb_row = mysqli_fetch_array( $jb_result ) ) {
+                            echo '<p>' . $jb_row[ 'no' ] . $jb_row[ 'sphere' ] . $jb_row[ 'type' ] . $jb_row[ 'product1' ] . $jb_row[ 'company' ]. $jb_row[ 'day' ].   '</p>';
+                          }
+
+                    ?> 
 
                 </div>
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
             </footer>
             <!-- End of Footer -->
 
