@@ -260,10 +260,10 @@
                             <!-- <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6> -->
                             <form class="form-inline">
                                 <div class="form-group">
-                                    <label for="inputPassword6">수주번호: </label>
+                                    <label for="inputPassword6">소재: </label>
                                     <input type="text" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">
     
-                                    <label for="inputPassword6">공급사: </label>
+                                    <label for="inputPassword6">분야: </label>
                                     <input type="text" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">
     
                                     <label for="inputPassword6">품목: </label>
@@ -301,31 +301,9 @@
                             </div> -->
                         </div>
                         <div class="card-body">
-                        <div class="table-responsive">
-                            
-                        <?php
-                    	$db_id='w1004mesmg';
-                        $db_pw='sunmoons1s2s3!';
-                        $db_name='w1004mesmg';
-                        $db_domain='localhost';
-                        $db=mysqli_connect($db_domain,$db_id,$db_pw,$db_name);
-                    
-                        if($db) {
-                            echo"db연결 성공";
-                        }else
-                        echo "db연결 실패"; 
-
-
-
-
+                        <a href="#" class="btn btn-primary" role="button" aria-pressed="true" style = "margin-left:90%; margin-bottom:1%;">내려받기</a>
                         
-                        $jb_sql = "SELECT * FROM sales;";
-                        $jb_result = mysqli_query( $db, $jb_sql );
-                        while( $jb_row = mysqli_fetch_array( $jb_result ) ) {
-                            echo '<p>' . $jb_row[ 'no' ] . $jb_row[ 'sphere' ] . $jb_row[ 'type' ] . $jb_row[ 'product1' ] . $jb_row[ 'company' ]. $jb_row[ 'day' ].   '</p>';
-                          }
-
-                    ?>
+                        <div class="table-responsive">
                         <table class="table table-borderedr" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr class = "alert alert-primary">
@@ -376,11 +354,72 @@
                                 </li>
                             </ul>
                         </nav>
-                        </div>
+                        <!-- <button class = "btn btn-primary" style = "margin-left:90%;">검색</button> -->
+                        <!-- <a href="#" class="btn btn-primary" role="button" aria-pressed="true">등록</a> -->
+                       <!-- Small modal -->
+
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+                            </div>
+                            </div>
+                        
                     </div>
+                    <?php
+                    	$db_id='w1004mesmg';
+                        $db_pw='sunmoons1s2s3!';
+                        $db_name='w1004mesmg';
+                        $db_domain='localhost';
+                        $db=mysqli_connect($db_domain,$db_id,$db_pw,$db_name);
+                    
+                        if($db) {
+                            echo"db연결 성공";
+                        }else
+                        echo "db연결 실패"; 
 
 
 
+
+                        
+                        $jb_sql = "SELECT * FROM sales;";
+                        $jb_result = mysqli_query( $db, $jb_sql );
+                        while( $jb_row = mysqli_fetch_array( $jb_result ) ) {
+                            echo '<p>' . $jb_row[ 'no' ] . $jb_row[ 'sphere' ] . $jb_row[ 'type' ] . $jb_row[ 'product1' ] . $jb_row[ 'company' ]. $jb_row[ 'day' ].   '</p>';
+                          }
+
+                    ?>
+
+
+                   
                 </div>
                 <!-- /.container-fluid -->
 
@@ -437,6 +476,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <script src="modal.js"></script>
 
 </body>
 
