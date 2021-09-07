@@ -220,27 +220,6 @@
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
                         </li>
 
                     </ul>
@@ -252,7 +231,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">부서관리</h1>
+                    <h1 class="h5 mb-4 text-gray-800">거래처 조회</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -360,35 +339,103 @@
                                     <!-- <div class="card-header py-3">
                                     </div> -->
                                     <div class="card-body">
-                                        <table border="1" style="width: 70%;">
+                                        <table style="width: 90%;">
                                             <tr><!-- 첫번째 줄 시작 -->
-                                                <td>첫번째 칸</td>
-                                                <td>두번째 칸</td>
+                                                <td >
+                                                    <form>
+                                                        <div class="form-group row">
+                                                            <label for="inputName" class="col-sm-4 col-form-label">업체명:</label>
+                                                            <div class="col-sm-8">
+                                                              <input type="name" class="form-control" id="inputName" style="width: 70%;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                          <label for="inputId" class="col-sm-4 col-form-label" >사업자번호:</label>
+                                                          <div class="col-sm-8">
+                                                            <input type="id" class="form-control" id="inputId" style="width: 70%;">
+                                                          </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label for="inputId" class="col-sm-4 col-form-label">전화번호:</label>
+                                                            <div class="col-sm-8">
+                                                              <input type="id" class="form-control" id="inputId" style="width: 70%;">
+                                                            </div>
+                                                            </div>
+                                                        <div class="form-group row">
+                                                            <label for="inputId" class="col-sm-4 col-form-label">구분:</label>
+                                                            <div class="col-sm-8">
+                                                                <label><input type="radio" name="color" value="a">매출</label>
+                                                                <label><input type="radio" name="color" value="b">매입</label>
+                                                            </div>
+                                                          </div>
+                                                        </form>
+                                                </td>
+
+                                                <td>
+                                                    <form>
+                                                        <div class="form-group row">
+                                                            <label for="inputName" class="col-sm-4 col-form-label">국내/외:</label>
+                                                            <div class="col-sm-8">
+                                                                <label><input type="radio" name="color" value="a">국내</label>
+                                                                <label><input type="radio" name="color" value="b">국외</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                          <label for="inputId" class="col-sm-4 col-form-label">대표자:</label>
+                                                          <div class="col-sm-8">
+                                                            <input type="id" class="form-control" id="inputId" style="width: 70%;">
+                                                          </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label for="inputId" class="col-sm-4 col-form-label">담당자:</label>
+                                                            <div class="col-sm-8">
+                                                              <input type="id" class="form-control" id="inputId" style="width: 70%;">
+                                                            </div>
+                                                          </div>
+                                                        <div class="form-group row">
+                                                            <label for="inputId" class="col-sm-4 col-form-label">우편번호:</label>
+                                                            <div class="col-sm-8">
+                                                            <input type="id" class="form-control" id="inputId" style="width: 70%;">
+                                                            </div>
+                                                          </div>
+                                                        </form>
+                                                </td>
+
+                                                <td>
+                                                    <form>
+                                                        <div class="form-group row">
+                                                            <label for="inputName" class="col-sm-3 col-form-label">업종:</label>
+                                                            <div class="col-sm-8">
+                                                              <input type="name" class="form-control" id="inputName" style="width: 70%;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                          <label for="inputId" class="col-sm-3 col-form-label">업태:</label>
+                                                          <div class="col-sm-8">
+                                                            <input type="id" class="form-control" id="inputId" style="width: 70%;">
+                                                          </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label for="inputId" class="col-sm-3 col-form-label">주소:</label>
+                                                            <div class="col-sm-8">
+                                                              <input type="id" class="form-control" id="inputId" style="width: 70%;">
+                                                            </div>
+                                                          </div>
+                                                        <div class="form-group row">
+                                                            <label for="inputId" class="col-sm-3 col-form-label">이메일:</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="id" class="form-control" id="inputId" style="width: 70%;">
+                                                            </div>
+                                            
+                                                            </div>
+                                                          
+                                                        </form>
+                                                       
+                                                </td>
                                             </tr><!-- 첫번째 줄 끝 -->
-                                            <tr><!-- 두번째 줄 시작 -->
-                                                <td>첫번째 칸</td>
-                                                <td>두번째 칸</td>
-                                            </tr><!-- 두번째 줄 끝 -->
+
                                             </table>
-                                        
-                                        
-                                        <form class="form-inline">
-                                            <div class="form-row">
-                                              <div class="col">
-                                                <!-- <label for="inputPassword6">Password</label> -->
-                                                이름: <input type="text" class="form-control" placeholder="City">
-                                              </div>
-                                              <div class="col">
-                                                <!-- <label for="inputPassword6">Password</label> -->
-                                                <input type="text" class="form-control" placeholder="State">
-                                              </div>
-                                              <div class="col">
-                                                <!-- <label for="inputPassword6">Password</label> -->
-                                                <input type="text" class="form-control" placeholder="Zip">
-                                              </div>
-                                            </div>
-                                          </form>
-                                          
+                                            <button class = "btn btn-primary" style="margin-left:90%;">검색</button>
 
                                 
                                     </div>

@@ -220,27 +220,7 @@
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
+                           
                         </li>
 
                     </ul>
@@ -252,50 +232,64 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-1 text-gray-800">자재관리 - 자재 출고 이력</h1>
+                    <h1 class="h5 mb-1 text-gray-800">자재관리 - 자재 출고 이력</h1>
                       <!-- DataTales Example -->
                       <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <!-- <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6> -->
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <label for="inputPassword6">자재이름: </label>
-                                    <input type="text" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">
-    
-                                    <label for="inputPassword6">창고위치: </label>
-                                    <input type="text" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">
-    
-                                    <!-- <label for="inputPassword6">품목: </label>
-                                    <input type="text" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;"> -->
-                                </div>
-                            </form>
-                        <br>
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <label for="inputPassword6">출고일자: </label>
-                                    <input type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">~
-                                    <input type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">
-                                
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked >
-                                    <label class="form-check-label" for="exampleRadios1" style = "margin-right:5%;" >금일
-                                        
-                                    </label>
+                            <table>
+                                <tr><!-- 첫번째 줄 시작 -->
+                                    <td >
+                                    <form>
+                                            <div class="form-group row">
+                                                <label for="inputPassword6">출고일자: </label>
+                                                <input type="date"  class="form-control mx-sm-3"  style = "width: 35%;">~
+                                                <input type="date"  class="form-control mx-sm-3"  style = "width: 35%;">
+                                            </div>
+                                    </form>
+                                    </td>
+                                    <td style = "width:50%;">
 
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios2" style = "margin-right:5%;">
-                                        금월
-                                    </label>
+                                        <form method="get" action="form-action.html">
+                                           
+                                            <label><input type="radio" name="fruit" value="today">금일</label>
+                                            <label><input type="radio" name="fruit" value="moth">금월</label>
+                                            <label><input type="radio" name="fruit" value="year">금년</label>
+                                            <!-- <p><input type="submit" value="Submit"> <input type="reset" value="Reset"></p> -->
+                                        </form>
+                                    </td>
+                                    </tr>
+                            </table>
 
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios3" style = "margin-right:5%;">
-                                       금년
-                                    </label>
-                                            <!-- <button class = "btn btn-primary" style = "margin-left:90%;">검색</button> -->
-                                </div>
-                            </form>
-    
+                            <table>
+                                    
+                                    <tr>    <!--두번째 행 -->
+                                    <td>
+                                    <form>
+                                    <div class="form-group row">
+                                        <label for="inputId" class="col-form-label">자재이름:</label>
+                                        <div class="col-sm-8">
+                                            <input type="id" class="form-control" id="inputId">
+                                        </div>
+                                    </div>
+                                    </form>
+                                    </td>
+
+                                    <td>
+                                    <form>
+                                        <div class="form-group row">
+                                        <label for="inputId" class="col-form-label">창고위치:</label>
+                                        <div class="col-sm-8">
+                                            <input type="id" class="form-control" id="inputId">
+                                        </div>
+                                    </div>
+                                    </form>
+                                    </td>
+                                </tr>
+                                           
+                            </table>
                                 
-                                <button class = "btn btn-primary" style = "margin-left:90%;">검색</button>
+                            <button class = "btn btn-primary" style = "margin-left:90%;">검색</button>
                             <!-- </div>
                             </div> -->
                         </div>

@@ -21,6 +21,13 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    <!-- <style>
+        input[type="radio"] {
+        margin-top: -1px;
+        vertical-align: middle;
+        }
+    </style> -->
+
 </head>
 
 <body id="page-top">
@@ -221,27 +228,6 @@
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
                         </li>
 
                     </ul>
@@ -253,50 +239,74 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">영업관리 - 생산품 수주관리</h1>
-                                        <!-- DataTales Example -->
-                                        <div class="card shadow mb-4">
+                    <h1 class="h5 mb-4 text-gray-800">영업관리 - 생산품 수주관리</h1>
+                        <!-- DataTales Example -->
+                        <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <!-- <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6> -->
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <label for="inputPassword6">소재: </label>
-                                    <input type="text" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">
-    
-                                    <label for="inputPassword6">분야: </label>
-                                    <input type="text" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">
-    
-                                    <label for="inputPassword6">품목: </label>
-                                    <input type="text" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">
-                                </div>
-                            </form>
-                        <br>
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <label for="inputPassword6">수주일자: </label>
-                                    <input type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">~
-                                    <input type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline" style = "width:20%;">
-                                
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked >
-                                    <label class="form-check-label" for="exampleRadios1" style = "margin-right:5%;" >금일
-                                        
-                                    </label>
+                        <table>
+                                <tr><!-- 첫번째 줄 시작 -->
+                                    <td >
+                                    <form>
+                                            <div class="form-group row">
+                                                <label for="inputPassword6">수주일자: </label>
+                                                <input type="date"  class="form-control mx-sm-3"  style = "width: 35%;">~
+                                                <input type="date"  class="form-control mx-sm-3"  style = "width: 35%;">
+                                            </div>
+                                    </form>
+                                    </td>
+                                    <td style = "width:50%;">
 
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios2" style = "margin-right:5%;">
-                                        금월
-                                    </label>
+                                        <form method="get" action="form-action.html">
+                                           
+                                            <label><input type="radio" name="fruit" value="today">금일</label>
+                                            <label><input type="radio" name="fruit" value="moth">금월</label>
+                                            <label><input type="radio" name="fruit" value="year">금년</label>
+                                            <!-- <p><input type="submit" value="Submit"> <input type="reset" value="Reset"></p> -->
+                                        </form>
+                                    </td>
+                                    </tr>
+                            </table>
 
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios3" style = "margin-right:5%;">
-                                       금년
-                                    </label>
-                                            <!-- <button class = "btn btn-primary" style = "margin-left:90%;">검색</button> -->
-                                </div>
-                            </form>
-    
+                            <table>
+                                    
+                                    <tr>    <!--두번째 행 -->
+                                    <td>
+                                    <form>
+                                    <div class="form-group row">
+                                        <label for="inputId" class="col-form-label">소재:</label>
+                                        <div class="col-sm-8">
+                                            <input type="id" class="form-control" id="inputId">
+                                        </div>
+                                    </div>
+                                    </form>
+                                    </td>
+
+                                    <td>
+                                    <form>
+                                        <div class="form-group row">
+                                        <label for="inputId" class="col-form-label">품목:</label>
+                                        <div class="col-sm-8">
+                                            <input type="id" class="form-control" id="inputId">
+                                        </div>
+                                    </div>
+                                    </form>
+                                    </td>
+
+                                    <td>
+                                    <form>
+                                        <div class="form-group row">
+                                            <label for="inputId" class="col-form-label">분야:</label>
+                                            <div class="col-sm-8">
+                                                <input type="id" class="form-control" id="inputId">
+                                            </div>
+                                    </div>
+                                    </form>
+                                    </td>
+                                </tr>
+                                           
+                            </table>
                                 
-                                <button class = "btn btn-primary" style = "margin-left:90%;">검색</button>
+                            <button class = "btn btn-primary" style = "margin-left:90%;">검색</button>
                             <!-- </div>
                             </div> -->
                         </div>
@@ -356,44 +366,10 @@
                         </nav>
                         <!-- <button class = "btn btn-primary" style = "margin-left:90%;">검색</button> -->
                         <!-- <a href="#" class="btn btn-primary" role="button" aria-pressed="true">등록</a> -->
-                       <!-- Small modal -->
 
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
-      </div>
-    </div>
-  </div>
-</div>
-                            </div>
-                            </div>
                         
-                    </div>
+
+
                     <?php
                     	$db_id='w1004mesmg';
                         $db_pw='sunmoons1s2s3!';
