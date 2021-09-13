@@ -1,16 +1,3 @@
-<?php
-	$db_id='w1004mesmg';
-	$db_pw='sunmoons1s2s3!';
-	$db_name='w1004mesmg';
-	$db_domain='localhost';
-	$db=mysqli_connect($db_domain,$db_id,$db_pw,$db_name);
-
-    if($db) {
-        echo"db연결 성공";
-    }else
-    echo "db연결 실패"; 
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +20,16 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- csv 내려받기 -->
+    <script type="text/javascript" src="js/jquery.table2CSV.js"></script>
+    <script type="text/javascript" src="js/jquery.TableCSVExport.js"></script>
+    <script>
+    $('#test').TableCSVExport({
+            delivery: 'download',
+            filename: 'test.csv'
+        });
+    </script>
 
 </head>
 
@@ -74,7 +71,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- <h6 class="collapse-header">Custom Components:</h6> -->
                         <a class="collapse-item" href="business1.php">생산품 수주 관리</a>
-                        <a class="collapse-item" href="business2.html">발주현황</a>
+                        <a class="collapse-item" href="business2.php">발주현황</a>
                     </div>
                 </div>
             </li>
@@ -90,10 +87,10 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- <h6 class="collapse-header">Custom Utilities:</h6> -->
-                        <a class="collapse-item" href="materials1.html">생산계획</a>
-                        <a class="collapse-item" href="materials2.html">자재 입고 이력</a>
-                        <a class="collapse-item" href="materials3.html">자재 출고 이력</a>
-                        <a class="collapse-item" href="materials4.html">보유 자재</a>
+                        <a class="collapse-item" href="materials1.php">생산계획</a>
+                        <a class="collapse-item" href="materials2.php">자재 입고 이력</a>
+                        <a class="collapse-item" href="materials3.php">자재 출고 이력</a>
+                        <a class="collapse-item" href="materials4.php">보유 자재</a>
                     </div>
                 </div>
             </li>
@@ -110,8 +107,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- <h6 class="collapse-header">Custom Utilities:</h6> -->
-                        <a class="collapse-item" href="production1.html">생산현황일지</a>
-                        <a class="collapse-item" href="production2.html">전체 품목 관리</a>
+                        <a class="collapse-item" href="production1.php">생산현황일지</a>
+                        <a class="collapse-item" href="production2.php">전체 품목 관리</a>
 
                     </div>
                 </div>
@@ -136,10 +133,10 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- <h6 class="collapse-header">Login Screens:</h6> -->
-                        <a class="collapse-item" href="person1.html">사원등록</a>
-                        <a class="collapse-item" href="person2.html">부서관리</a>
-                        <a class="collapse-item" href="person3.html">사용자 등록</a>
-                        <a class="collapse-item" href="customer.html">거래처 조회</a>
+                        <a class="collapse-item" href="person1.php">사원등록</a>
+                        <a class="collapse-item" href="person2.php">부서관리</a>
+                        <a class="collapse-item" href="person3.php">사용자 등록</a>
+                        <a class="collapse-item" href="customer.php">거래처 조회</a>
                     </div>
                 </div>
             </li>
@@ -183,20 +180,6 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    <!-- <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form> -->
-
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -234,27 +217,6 @@
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
                         </li>
 
                     </ul>
@@ -266,23 +228,209 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">영업관리 - 생산품 수주관리</h1>
-                    <?php
-                        $jb_sql = "SELECT * FROM sales;";
+                    <h1 class="h5 mb-4 text-gray-800">영업관리 - 생산품 수주관리</h1>
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+
+                        <table frame=void>
+                                <tr><!-- 첫번째 줄 시작 -->
+                                    <td >
+                                    <form>
+                                            <div class="form-group row">
+                                                <label for="inputPassword6">발주일자: </label>
+                                                <input type="date"  class="form-control mx-sm-3"  style = "width: 35%;">~
+                                                <input type="date"  class="form-control mx-sm-3"  style = "width: 35%;">
+                                            </div>
+                                    </form>
+                                    </td>
+                                    <td style = "width:50%;">
+
+                                        <form method="get" action="form-action.html">
+                                           
+                                            <label><input type="radio" name="fruit" value="today">금일</label>
+                                            <label><input type="radio" name="fruit" value="moth">금월</label>
+                                            <label><input type="radio" name="fruit" value="year">금년</label>
+                                            <!-- <p><input type="submit" value="Submit"> <input type="reset" value="Reset"></p> -->
+                                        </form>
+                                    </td>
+                                    </tr>
+                            </table>
+                            <form id="searchform2" action="searchform2.php" method="post">
+                            <table frame=void name="searchform2" >
+                                    
+                                    <tr>    <!--두번째 행 -->
+                                    <td frame=void>
+                                    <form>
+                                    <div class="form-group row">
+                                        <label for="inputId" class="col-form-label">의뢰코드:</label>
+                                        <div class="col-sm-8">
+                                            <input type="form1" class="form-control" name="form1">
+                                            
+                                        </div>
+                                    </div>
+                                    </form>
+                                    </td>
+
+                                    <td frame=void>
+                                    <form>
+                                        <div class="form-group row">
+                                        <label for="inputId" class="col-form-label">발주업체명:</label>
+                                        <div class="col-sm-8">
+                                            <input type="form2" class="form-control" name="form2">
+                                        </div>
+                                    </div>
+                                    </form>
+                                    </td>
+
+                                    <td frame=void>
+                                    <form>
+                                        <div class="form-group row">
+                                            <label for="inputId" class="col-form-label">자재이름:</label>
+                                            <div class="col-sm-8">
+                                                <input type="form3" class="form-control" name="form3">
+                                            </div>
+                                    </div>
+                                    </form>
+                                    </td>
+                                    </tr>               
+                            </table>
+                                    <button class = "btn btn-primary" style = "margin-left:90%;">검색</button>
+                            </form>
+                                
+                            <!-- </div>
+                            </div> -->
+                        </div>
+                        <div class="card-body">
+                        <a href="#" class="btn btn-primary" role="button" aria-pressed="true" style = "margin-left:90%; margin-bottom:1%;">내려받기</a>
+                        
+                        <table id="test">
+                            <thead>
+                                <tr style = "text-align:center;" class="table-primary">
+                                    <th width = "50" >번호</th>
+                                    <th width = "200">분야</th>
+                                    <th width = "130">타입</th>
+                                    <th width = "350">상품명</th>
+                                    <th width = "250">회사명</th>
+                                    <th width = "100">날짜</th>
+                                </tr>
+                            </thead>
+                            <tboay>
+        
+                        <?php
+                        // 서버에 올릴 떄 DB 
+                    	// $db_id='w1004mesmg';
+                        // $db_pw='sunmoons1s2s3!';
+                        // $db_name='w1004mesmg';
+                        // $db_domain='localhost';
+
+                        // 로컬 DB 
+                        $db_id='root';
+                        $db_pw='';
+                        $db_name='mes_project';
+                        $db_domain='localhost';
+                        $db=mysqli_connect($db_domain,$db_id,$db_pw,$db_name);
+                    
+                        // if($db) {
+                        //     echo"db연결 성공";
+                        // }else
+                        // echo "db연결 실패"; 
+                   
+                        // $jb_sql = "SELECT * FROM sales where sphere = '기계부품'";
+                        // $jb_sql = "SELECT * FROM 공정 필요 자재;";
+                        $jb_sql = "SELECT * FROM sales LIMIT 50;";
+
+
                         $jb_result = mysqli_query( $db, $jb_sql );
-                        while( $jb_row = mysqli_fetch_array( $jb_result ) ) {
-                            echo '<p>' . $jb_row[ 'no' ] . $jb_row[ 'sphere' ] . $jb_row[ 'type' ] . $jb_row[ 'product1' ] . $jb_row[ 'company' ]. $jb_row[ 'day' ].   '</p>';
-                          }
-
-                    ?>
-
-
-
-
-            
-
+                        // while( $jb_row = mysqli_fetch_array( $jb_result ) ) 
+                        // {
+                        //     echo '<p>' . $jb_row[ 'no' ] . $jb_row[ 'sphere' ] . $jb_row[ 'type' ] . $jb_row[ 'product1' ] . $jb_row[ 'company' ]. $jb_row[ 'day' ].   '</p>';
+                        //   }
                        
+                       
+                        // echo "<style>td {border:1px solid #ccc; padding:5px; }</style>";    
+                        // echo "<table><tbody>";
 
+                            while( $jb_row = mysqli_fetch_array( $jb_result ) ) 
+                        {
+                            echo "<tr><style>tr {border:1px solid #ccc; padding:5px; text-align:center; line-height:45px; }</style>";
+                            // echo "";
+                            // echo "<p><td>번호: ". $jb_row[ 'a' ]. "</td><td> 분야: ". $jb_row[ 'b' ]. "</td><td> 타입: ".$jb_row[ 'c' ]. "</td></p>";
+                            // echo "<p><td>번호: ". $jb_row[ 'no' ]. "</td><td> 분야: ". $jb_row[ 'sphere' ]. "</td><td> 타입: ".$jb_row[ 'type' ]. "</td><td> 상품명: " .$jb_row[ 'product' ] ."</td><td> 회사명: ". $jb_row[ 'company' ]. "</td><td> 날짜: ". $jb_row[ 'day' ]. "</td></p>";
+                             echo "<p><td>". $jb_row[ 'no' ]. "</td><td> ". $jb_row[ 'sphere' ]. "</td><td>  ".$jb_row[ 'type' ]. "</td><td>" .$jb_row[ 'product' ] ."</td><td>". $jb_row[ 'company' ]. "</td><td> ". $jb_row[ 'day' ]. "</td></p>";
+                           
+                            echo "</tr>";
+
+                          }
+                         
+                        // echo "</table></tbody>";
+                    
+                    ?>
+                    </tboay>
+                    </table>
+                    
+                    <br>
+
+                        <!-- 다음페이지 넘기기 -->
+                        <nav aria-label="Page navigation example" style = "margin-left:38%;">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- <button class = "btn btn-primary" style = "margin-left:90%;">검색</button> -->
+                        <!-- <a href="#" class="btn btn-primary" role="button" aria-pressed="true">등록</a> -->
+                       <!-- Small modal -->
+
+                            
+
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                        <input type="text" class="form-control" id="recipient-name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="col-form-label">Message:</label>
+                                        <textarea class="form-control" id="message-text"></textarea>
+                                    </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Send message</button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                        
+                    </div>
+
+                   <!-- 여기 -->
 
                 </div>
                 <!-- /.container-fluid -->
@@ -290,15 +438,7 @@
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+           
 
         </div>
         <!-- End of Content Wrapper -->
@@ -330,7 +470,7 @@
             </div>
         </div>
     </div>
-
+   <script src="./js/search.js"></script>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -341,6 +481,7 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
+ 
 </body>
 
 </html>
